@@ -10,18 +10,38 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="containter">
+    <div class="containter-fluid">
         <div class="row mt-3">
-            <div class="col-md-6 offset-md-3 text-center rounded main-content">
+            <div class="col-md-6 offset-md-3 text-center rounded pb-2 main-content">
                 <div class="row mt-2">
                     <div class="col-md-12">
                         <h1 class="rounded pb-2">Tony Hawk's Pro Skater Trivia!</h1>
                     </div>
                 </div>
 
-                <div class="row" id="quizArea">
+                <div class="row">
                     <div class="col-md-12">
-                        
+                        <h3 id="timer">2:00</h3>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>Collect the letters of SKATE</p>
+                        <h3 id="skate"></h3>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>Find the hidden tape</p>
+                        <div id="hiddenTape"></div>
+                    </div>
+                </div>
+
+                <div class="row h-75">
+                    <div class="col-md-12 h-100" id="quizArea">
+                        <button type="button" class="btn btn-lg btn-secondary" id="start">Start</button>
                     </div>
                 </div>
             
@@ -36,5 +56,6 @@
   src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
   integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
   crossorigin="anonymous"></script>
+    <script src="assets/javascript/app.js"></script>
 </body>
 </html>
