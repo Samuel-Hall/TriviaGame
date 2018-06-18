@@ -19,3 +19,17 @@ h1 {
 #skate {
     color: rgb(255, 196, 0);
 }
+
+#timer {
+    font-family: 'Orbitron', sans-serif;
+    color: red;
+}
+
+@font-face {
+    font-family: Punkass;
+    src: url(../fonts/punkass_.ttf);
+    }
+
+#collectSkate, #skate, #findTape, #questionsRemaining, #notAnswered {
+    font-family: Punkass;
+}
