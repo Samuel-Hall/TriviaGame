@@ -19,11 +19,11 @@ body {
 h1 {
     background-color: #73007F;
     color: #ffffff;
-    font-family: TonyHawk;
+    font-family: TonyHawk, Arial, Helvetica, sans-serif;
 }
 
 #quizArea {
-    font-family: TonyHawk;
+    font-family: TonyHawk, Arial, Helvetica, sans-serif;
 }
 
 #skate {
@@ -56,6 +56,14 @@ img {
     width: 80px;
 }
 
-.thps {
-    
+@media screen and (max-width: 340px) {
+    h1 {
+        height: auto;
+        padding-top: 3px;
+    }
+
+    .main-content {
+        padding: 3px 3px 3px 3px;
+    }
+
 }
