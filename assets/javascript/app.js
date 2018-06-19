@@ -82,7 +82,7 @@ $(document).ready(function() {
     }
     var questionTen = {
         question: "In addition to walking, which other feature did Tony Hawk's Underground implement?",
-        img: "assets/images/skitching.jpg",
+        img: "assets/images/driving.jpg",
         correctAnswer: "Driving",
         incorrectAnswerOne: "Crying",
         incorrectAnswerTwo: "Throw Baby",
