@@ -44,3 +44,14 @@ h1 {
 #collectSkate, #skate, #findTape, #questionsRemaining, #notAnswered {
     font-family: Punkass;
 }
+
+img {
+    height: 300px;
+    width: 350px;
+    border-radius: 4px;
+}
+
+#hiddenTapeImg {
+    height: 80px;
+    width: 80px;
+}

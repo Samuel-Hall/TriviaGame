@@ -1,5 +1,4 @@
 // Fill in the actual questions
-// Finish styling the page
 // Write the README
 // Push to pages
 // Add to portfolio page
@@ -16,44 +15,44 @@ $(document).ready(function() {
     // Create an array. Each element in the array is an object containing a question and several possible answers. Only one of the answers is the correct answer. 
     
     var questionOne = {
-        question: "this is a test",
-        img: "",
-        correctAnswer: "This is correct",
-        incorrectAnswerOne: "This is incorrect one",
-        incorrectAnswerTwo: "This is incorrect two",
-        incorrectAnswerThree: "This is incorrect three"
+        question: "The very first level of Tony Hawk's Pro Skater is:",
+        img: "assets/images/warehouse.jpg",
+        correctAnswer: "Warehouse",
+        incorrectAnswerOne: "School",
+        incorrectAnswerTwo: "Mall",
+        incorrectAnswerThree: "Downhill Jam"
     }
     var questionTwo = {
-        question: "this is also a test",
-        img: "",
-        correctAnswer: "This is also correct",
-        incorrectAnswerOne: "This is also incorrect one",
-        incorrectAnswerTwo: "This is also incorrect two",
-        incorrectAnswerThree: "This is also incorrect three"
+        question: "Which of the following skaters is NOT in the first THPS game?",
+        img: "assets/images/rodneyMullen.jpg",
+        correctAnswer: "Rodney Mullen",
+        incorrectAnswerOne: "Bucky Lasek",
+        incorrectAnswerTwo: "Chad Muska",
+        incorrectAnswerThree: "Rune Glifberg"
     }
     var questionThree = {
-        question: "this is 3 a test",
-        img: "",
-        correctAnswer: "This is 3 correct",
-        incorrectAnswerOne: "This is 3 incorrect one",
-        incorrectAnswerTwo: "This is 3 incorrect two",
-        incorrectAnswerThree: "This is 3 incorrect three"
+        question: "This homeless gentleman makes his first appearance in THPS2's Venice level",
+        img: "assets/images/ollieTheMagicBum.jpg",
+        correctAnswer: "Ollie the Magic Bum",
+        incorrectAnswerOne: "Nollie the Smelly Hippy",
+        incorrectAnswerTwo: "Trogdor the Burninator",
+        incorrectAnswerThree: "Freddie the Freeloader"
     }
     var questionFour = {
-        question: "this is 4 a test",
-        img: "",
-        correctAnswer: "This is 4 correct",
-        incorrectAnswerOne: "This is 4 incorrect one",
-        incorrectAnswerTwo: "This is 4 incorrect two",
-        incorrectAnswerThree: "This is 4 incorrect three"
+        question: "In the N64 version of the first game, what is the button combination to perform The 900?",
+        img: "assets/images/the900.jpg",
+        correctAnswer: "→ ↓ C-Right",
+        incorrectAnswerOne: "↓ ↓ C-Up",
+        incorrectAnswerTwo: "← ↑ C-Left",
+        incorrectAnswerThree: "↑ ↑ C-Down"
     }
     var questionFive = {
-        question: "this is 5 a test",
-        img: "",
-        correctAnswer: "This is 5 correct",
-        incorrectAnswerOne: "This is 5 incorrect one",
-        incorrectAnswerTwo: "This is 5 incorrect two",
-        incorrectAnswerThree: "This is 5 incorrect three"
+        question: "Chad Muska carries this item during his special tricks:",
+        img: "assets/images/muskaBoombox.jpg",
+        correctAnswer: "Boombox",
+        incorrectAnswerOne: "Guitar",
+        incorrectAnswerTwo: "Giant clock necklace?",
+        incorrectAnswerThree: "A USB Dongle Goblin"
     }
     
     var questions = [questionOne, questionTwo, questionThree, questionFour, questionFive];
@@ -61,7 +60,7 @@ $(document).ready(function() {
     var currentQuestion = questions[questionIndex];    
     var questionsNotAnswered = questions.length;
     // Create variable to hold SKATE before and after the letters have been collected. 
-    var skate = ["S", "K", "A", "T", "E"];
+    var skate = ["S ", "K ", "A ", "T ", "E"];
     var skateLettersEarned = [];
     var skateIndex = 0;
 
@@ -206,7 +205,7 @@ $(document).ready(function() {
             function incorrectAnswer() {
                 questionsIncorrect++;
                 $("#form").html("<h2>Wrong! The correct answer is:</h2>");
-                $("#form").append("<input type='button' class='btn btn-secondary btn-block' value='" + currentQuestion.correctAnswer + "'></input><br>");
+                $("#form").append("<input type='button' class='btn btn-secondary btn-block' value='" + currentQuestion.correctAnswer + "'></input><br><img src='" + currentQuestion.img + "' id='correctAnswerImg' />");
                 questionsAnswered++;
                 questionsNotAnswered = questions.length - questionsAnswered;
                 $("#notAnswered").text(questionsNotAnswered);
@@ -227,7 +226,7 @@ $(document).ready(function() {
             function correctAnswer() {
                 questionsCorrect++;
                 $("#form").html("<h2>You got it! The correct answer is:</h2>");
-                $("#form").append("<input type='button' class='btn btn-secondary btn-block' value='" + currentQuestion.correctAnswer + "'></input><br>");
+                $("#form").append("<input type='button' class='btn btn-secondary btn-block' value='" + currentQuestion.correctAnswer + "'></input><br><img src='" + currentQuestion.img + "' id='correctAnswerImg' />");
                 // Add a letter from the skate array to the array containing earned letters that will be displayed on the page. 
                 skateLettersEarned.push(skate[skateIndex]);
                 skateIndex++;
@@ -248,8 +247,8 @@ $(document).ready(function() {
                 }
                 // Find the hidden tape by answering all questions correctly
                 if (questionsCorrect == questions.length) {
-                    $("#findTape").text("You found the hidden tape!");
-                    $("#hiddenTape").append("<img  src='assets/images/hiddenTape.jpg' alt='Hidden tape' style='width:80px;height:80px;' />");
+                    $("#findTape").text("You found the hidden tape");
+                    $("#hiddenTape").append("<img  src='assets/images/hiddenTape.jpg' alt='Hidden tape' id='hiddenTapeImg' />");
                 };
             }
 
@@ -260,13 +259,13 @@ $(document).ready(function() {
         
         function displaySkate() {
             skateLettersEarned = skateLettersEarned.join("");
-            if (skateLettersEarned !== "SKATE"){
+            if (skateLettersEarned !== "S K A T E"){
                 $("#skate").text(skateLettersEarned);
                 skateLettersEarned = skateLettersEarned.split('');
             }
             else {
                 $("#skate").text(skateLettersEarned);
-                $("#collectSkate").text("You got SKATE!");
+                $("#collectSkate").text("You got SKATE");
             };
         };
 
