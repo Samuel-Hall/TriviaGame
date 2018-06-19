@@ -64,7 +64,8 @@ img {
     }
 
     .main-content {
-        padding: 3px 3px 3px 3px;
+        padding: 3px 9px 3px 9px;
+        width: 100%;
     }
 
 }
