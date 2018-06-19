@@ -1,7 +1,3 @@
-// Fill in the actual questions
-// Write the README
-// Add to portfolio page
-
 
 $(document).ready(function() {
     // Create variables to hold number of right, wrong, and unanswered questions.
@@ -76,8 +72,24 @@ $(document).ready(function() {
         incorrectAnswerTwo: "Iron Man",
         incorrectAnswerThree: "Duffman"
     }
+    var questionNine = {
+        question: "THPS 4 introduced a new feature called ________ where you pull yourself behind a moving vehicle.",
+        img: "assets/images/skitching.jpg",
+        correctAnswer: "Skitching",
+        incorrectAnswerOne: "Gripping",
+        incorrectAnswerTwo: "Bailing",
+        incorrectAnswerThree: "Ripping"
+    }
+    var questionTen = {
+        question: "In addition to walking, which other feature did Tony Hawk's Underground implement?",
+        img: "assets/images/skitching.jpg",
+        correctAnswer: "Driving",
+        incorrectAnswerOne: "Crying",
+        incorrectAnswerTwo: "Throw Baby",
+        incorrectAnswerThree: "Battle Royale"
+    }
     
-    var questions = [questionOne, questionTwo, questionThree, questionFour, questionFive, questionSix, questionSeven, questionEight];
+    var questions = [questionOne, questionTwo, questionThree, questionFour, questionFive, questionSix, questionSeven, questionEight, questionNine, questionTen];
     var questionIndex = 0;
     var currentQuestion = questions[questionIndex];    
     var questionsNotAnswered = questions.length;
