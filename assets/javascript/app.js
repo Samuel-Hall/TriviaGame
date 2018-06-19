@@ -17,6 +17,7 @@ $(document).ready(function() {
     
     var questionOne = {
         question: "this is a test",
+        img: "",
         correctAnswer: "This is correct",
         incorrectAnswerOne: "This is incorrect one",
         incorrectAnswerTwo: "This is incorrect two",
@@ -24,6 +25,7 @@ $(document).ready(function() {
     }
     var questionTwo = {
         question: "this is also a test",
+        img: "",
         correctAnswer: "This is also correct",
         incorrectAnswerOne: "This is also incorrect one",
         incorrectAnswerTwo: "This is also incorrect two",
@@ -31,6 +33,7 @@ $(document).ready(function() {
     }
     var questionThree = {
         question: "this is 3 a test",
+        img: "",
         correctAnswer: "This is 3 correct",
         incorrectAnswerOne: "This is 3 incorrect one",
         incorrectAnswerTwo: "This is 3 incorrect two",
@@ -38,6 +41,7 @@ $(document).ready(function() {
     }
     var questionFour = {
         question: "this is 4 a test",
+        img: "",
         correctAnswer: "This is 4 correct",
         incorrectAnswerOne: "This is 4 incorrect one",
         incorrectAnswerTwo: "This is 4 incorrect two",
@@ -45,6 +49,7 @@ $(document).ready(function() {
     }
     var questionFive = {
         question: "this is 5 a test",
+        img: "",
         correctAnswer: "This is 5 correct",
         incorrectAnswerOne: "This is 5 incorrect one",
         incorrectAnswerTwo: "This is 5 incorrect two",
@@ -143,13 +148,13 @@ $(document).ready(function() {
         }
 
         reset();
+        $("#notAnswered").text(questionsNotAnswered);
         // put questions in a random order
         shuffleArray(questions);
         startTimer();
         showQuestion();        
 
         function showQuestion() {
-            $("#notAnswered").text(questionsNotAnswered);
 
             // reassign the current question
             currentQuestion = questions[questionIndex];
@@ -157,7 +162,7 @@ $(document).ready(function() {
             // take answers and randomize the order
             // Object.values???
             var randomAnswers = Object.keys(currentQuestion);
-            randomAnswers.splice(0, 1);
+            randomAnswers.splice(0, 2);
             shuffleArray(randomAnswers);
 
             // restart click event listener
@@ -202,18 +207,17 @@ $(document).ready(function() {
                 questionsIncorrect++;
                 $("#form").html("<h2>Wrong! The correct answer is:</h2>");
                 $("#form").append("<input type='button' class='btn btn-secondary btn-block' value='" + currentQuestion.correctAnswer + "'></input><br>");
+                questionsAnswered++;
+                questionsNotAnswered = questions.length - questionsAnswered;
+                $("#notAnswered").text(questionsNotAnswered);
                 if (questionIndex !== (questions.length -1)){
                     questionIndex++;
                     setTimeout(function() {
-                        questionsAnswered++;
-                        questionsNotAnswered = questions.length - questionsAnswered;
                         showQuestion();
                     }, 3500);
                 }
                 else {
                     setTimeout(function() {
-                    questionsAnswered++;
-                    questionsNotAnswered = questions.length - questionsAnswered;
                     finishQuestions();
                     }, 3500);
                 }
@@ -228,18 +232,17 @@ $(document).ready(function() {
                 skateLettersEarned.push(skate[skateIndex]);
                 skateIndex++;
                 displaySkate();
+                questionsAnswered++;
+                questionsNotAnswered = questions.length - questionsAnswered;
+                $("#notAnswered").text(questionsNotAnswered);
                 if (questionIndex !== (questions.length -1)){
                     questionIndex++;
                     setTimeout(function() {
-                        questionsAnswered++;
-                        questionsNotAnswered = questions.length - questionsAnswered;
                         showQuestion();
                     }, 3500);
                 }
                 else {
                     setTimeout(function() {
-                    questionsAnswered++;
-                    questionsNotAnswered = questions.length - questionsAnswered;
                     finishQuestions();
                     }, 3500);
                 }

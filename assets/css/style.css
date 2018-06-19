@@ -11,9 +11,19 @@ body {
     height: auto;
 }
 
+@font-face {
+    font-family: TonyHawk;
+    src: url(../fonts/tonyHawk.ttf);
+    }
+
 h1 {
     background-color: #73007F;
     color: #ffffff;
+    font-family: TonyHawk;
+}
+
+#quizArea {
+    font-family: TonyHawk;
 }
 
 #skate {
@@ -29,6 +39,7 @@ h1 {
     font-family: Punkass;
     src: url(../fonts/punkass_.ttf);
     }
+
 
 #collectSkate, #skate, #findTape, #questionsRemaining, #notAnswered {
     font-family: Punkass;
