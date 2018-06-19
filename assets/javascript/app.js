@@ -1,8 +1,6 @@
 // Fill in the actual questions
 // Write the README
-// Push to pages
 // Add to portfolio page
-// Submit links to BCS
 
 
 $(document).ready(function() {
@@ -54,8 +52,32 @@ $(document).ready(function() {
         incorrectAnswerTwo: "Giant clock necklace?",
         incorrectAnswerThree: "A USB Dongle Goblin"
     }
+    var questionSix = {
+        question: "All of these songs are in the original THPS EXCEPT for: ",
+        img: "assets/images/rageAgainstTheMachine.jpg",
+        correctAnswer: "Rage Against the Machine - Guerrilla Radio",
+        incorrectAnswerOne: "Goldfinger - Superman",
+        incorrectAnswerTwo: "Primus - Jerry was a Racecar Driver",
+        incorrectAnswerThree: "Unsane - Committed"
+    }
+    var questionSeven = {
+        question: "This character can be unlocked by collecting all of the tapes in THPS with a single skater ",
+        img: "assets/images/officerDick.jpg",
+        correctAnswer: "Officer Dick",
+        incorrectAnswerOne: "Smokey the Bear",
+        incorrectAnswerTwo: "Smacky the Frog",
+        incorrectAnswerThree: "Bigfoot"
+    }
+    var questionEight = {
+        question: "In THPS 2, get 100% in Career Mode with a created skater to unlock this Superhero",
+        img: "assets/images/spiderMan.jpg",
+        correctAnswer: "Spider-Man",
+        incorrectAnswerOne: "Batman",
+        incorrectAnswerTwo: "Iron Man",
+        incorrectAnswerThree: "Duffman"
+    }
     
-    var questions = [questionOne, questionTwo, questionThree, questionFour, questionFive];
+    var questions = [questionOne, questionTwo, questionThree, questionFour, questionFive, questionSix, questionSeven, questionEight];
     var questionIndex = 0;
     var currentQuestion = questions[questionIndex];    
     var questionsNotAnswered = questions.length;
@@ -228,9 +250,11 @@ $(document).ready(function() {
                 $("#form").html("<h2>You got it! The correct answer is:</h2>");
                 $("#form").append("<input type='button' class='btn btn-secondary btn-block' value='" + currentQuestion.correctAnswer + "'></input><br><img src='" + currentQuestion.img + "' id='correctAnswerImg' />");
                 // Add a letter from the skate array to the array containing earned letters that will be displayed on the page. 
-                skateLettersEarned.push(skate[skateIndex]);
-                skateIndex++;
-                displaySkate();
+                if (skateIndex !== skate.length){
+                    skateLettersEarned.push(skate[skateIndex]);
+                    skateIndex++;
+                    displaySkate();
+                }
                 questionsAnswered++;
                 questionsNotAnswered = questions.length - questionsAnswered;
                 $("#notAnswered").text(questionsNotAnswered);
